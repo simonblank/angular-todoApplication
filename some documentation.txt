@@ -1,0 +1,34 @@
+todo application by Simon Blank
+angular verision 5.2 + bootstrap
+
+
+todo items
+ todo items have 3 values
+ text: the text that willbe shown when the item is visible
+ checked: either true or false, its bound to the items checkbox and is also used in the filter functions
+ editable: either true or false used to make the list item go into or out of edit mode
+
+
+filtering
+ first the filter functions iterates through the templist and adds any item they contain.
+ after that the filter iterates through the the todolist with .filter it pick up all the items that WONT be used and overwrites templist with the array .filter returns
+ now the filter functions iterates through the todolist again and removes all items that wont be used
+
+ 1 load items from previus filters
+ 2 load templist with the items that wont be used
+ 3 remove items that wont be used from todolist
+ 
+
+checking/ unchecking all items
+ check all   calls a function that iterates through the list cotaining all todos and sets the items checked value to true
+ unCheck all calls a function that iterates through the list cotaining all todos and sets the items checked value to false
+
+
+editing todo items
+ the text in the list of todo is a <span> that is either shown or (removed) with a *ngif tied to the items "editable" variable.
+ it also has a doubleclick that calls the function "setEditable" which sets the items editable varible to "true" which causes the span to be removed and the listitems input to be shown
+ 
+ the input is also removed / shown depending on the items "editable" variable but its shown when the <span> is removed and vice versa 
+ the input is wrapped in a form to make the input able to accept enter to finish editing.
+ when enter is pressed it calls the function "doneEditing" wich turns "editable" to false hidning the <input> and showing the <span> again
+ the input also calls "doneEditing" on blur 

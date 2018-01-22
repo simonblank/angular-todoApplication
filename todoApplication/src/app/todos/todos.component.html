@@ -1,0 +1,66 @@
+<div class="appContainer">
+
+    <div class="TextInput">
+        <form
+          name="theFormNeedsANameForNgSubmitToFire"
+          (ngSubmit)="addToCollection()">
+              <input type="text"
+                    name="addTodo_Input"
+                    [(ngModel)]="inputValue"
+                    value="{{inputValue}}"
+                    class="form-control custom-input-width pull-left"  />
+        </form>
+    </div>
+
+    <div class="alignAddButton">
+        <button class="btn btn-success"
+                (click)="addToCollection()" > add </button>
+    </div>
+
+    <div class="alignCheckButtons">
+        <button class="btn btn-primary"
+                (click)="checkAll()" > check all </button>
+        <button class="btn btn-primary"
+                (click)="unCheckAll()" > unCheck all </button>
+    </div>
+
+    <div class="alignCheckButtons">
+      <select [(ngModel)]="selectedItem">
+          <option *ngFor="let item of selectList" [value]="item.text" >{{item.text}}</option>
+      </select>
+
+      <button class="btn btn-primary"
+              (click)="selectHandler()" > filter </button>
+    </div>
+
+    <p  class="itemCounter"> items in the todolist {{todos.length}}</p>
+
+    <li *ngFor="let item of todos"
+          class="listItem" >
+            <div class="TextInput">
+                <span *ngIf="!item.editable" (dblclick)="setEditable(item)" class="text">{{item.text}}</span>
+                      <form
+                        name="theFormNeedsANameForNgSubmitToFire"
+                        (ngSubmit)="doneEditing(item)"
+                        *ngIf="item.editable" >
+                                <input #editingField
+                                        class="form-control custom-input-width pull-left"
+                                        name="editingField"
+                                        [(ngModel)]="item.text"
+                                        (blur)="doneEditing(item)"
+                                         />
+                      </form>
+            </div>
+            <div class="centerListBotton">
+        <b>completed</b>
+        <input type="checkbox"
+               [(ngModel)]="item.checked" />
+        <button class="btn btn-danger"
+                (click)="removeFromCollection(item)" > remove </button>
+          </div>
+
+    </li>
+
+    <div class="bottomSpace">
+      <div>
+</div>

@@ -1,0 +1,58 @@
+.appContainer{
+  margin-left: 40%;
+  border: 2px solid #b3b5b7;
+  border-radius: 25px;
+  width: 20%;
+}
+
+.alignAddButton{
+  margin-top: 45px;
+  margin-left: 40%;
+}
+
+.alignCheckButtons{
+  margin-top: 5px;
+  margin-left: 20%;
+}
+
+.addInputField{
+  width: 60%;
+  margin-top: 5px;
+  margin-left: 20%;
+}
+
+.listItem{
+  margin-left: 2%;
+  width: 96%;
+  margin-top: 5px;
+  list-style: none;
+  border-radius: 25px;
+  background-color: #dbdde0;
+  padding: 5px;
+}
+
+.TextInput{
+  margin-top: 5px;
+  margin-left: 3%;
+  width: 93%;
+}
+
+.centerListBotton{
+  text-align: center;
+}
+
+.bottomSpace{
+  height: 40px;
+
+}
+
+.itemCounter{
+  margin-top: 5px;
+  margin-left: 18%;
+  font-family: 'Arial';font-size: 20px;
+
+}
+
+.text{
+    font-family: 'Arial';font-size: 22px;
+}
